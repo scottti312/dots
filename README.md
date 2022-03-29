@@ -4,6 +4,7 @@ Here is my mostly basic configuration. I use kitty as my main terminal and alacr
 # Screenshot
 ## Programs seen in screenshot
  - kitty terminal
+ - oh my posh prompt
  - neofetch
  - ranger file explorer
  - astro vim
@@ -22,3 +23,5 @@ Here is my mostly basic configuration. I use kitty as my main terminal and alacr
 [picom compositor](https://github.com/yshui/picom)
 
 [polybar status bar](https://github.com/polybar/polybar)
+
+[oh my posh prompt](https://ohmyposh.dev/)
