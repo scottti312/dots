@@ -2,15 +2,9 @@
 Here are is my arch configuration
 
 # Programs
-## bspwm window manager
-- https://wiki.archlinux.org/title/bspwm
-## sxhkd hotkey daemon
-- https://wiki.archlinux.org/title/Sxhkd
-## kitty terminal
-- https://wiki.archlinux.org/title/Kitty
-## alacritty terminal
-- https://wiki.archlinux.org/title/Alacritty
-## picom compositor
-- https://wiki.archlinux.org/title/Picom
-## polybar
-- https://wiki.archlinux.org/title/Polybar
+## [bspwm window manager](https://github.com/baskerville/bspwm)
+## [sxhkd hotkey daemon](https://github.com/baskerville/sxhkd)
+## [kitty terminal](https://github.com/kovidgoyal/kitty)
+## [alacritty terminal](https://github.com/alacritty/alacritty)
+## [picom compositor](https://github.com/yshui/picom)
+## [polybar status bar](https://github.com/polybar/polybar)
