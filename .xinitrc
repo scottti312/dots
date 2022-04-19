@@ -53,6 +53,9 @@ xrandr --output DP-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --r
 picom -f &
 xsetroot -cursor_name left_ptr &
 nitrogen --restore &
-sleep 4 && ./.config/polybar/launch_polybar.sh &
+polybar example &
+polybar example1 &
+# sleep 4 && ./.config/polybar/launch_polybar.sh &
 xset r rate 200 25 &
+cadmus &
 exec bspwm

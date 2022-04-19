@@ -28,9 +28,8 @@ disabled = #707880
 [bar/example]
 width = 100%
 height = 24pt
-bottom = true
 radius = 6
-monitor = DP-0
+monitor = ${env:MONITOR:}
 ; dpi = 96
 
 background = ${colors.background}
@@ -58,64 +57,37 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
+
 tray-position = right
+
+; wm-restack = generic
 wm-restack = bspwm
+; wm-restack = i3
 
-
-[bar/example1]
-width = 100%
-height = 24pt
-bottom = true
-radius = 6
-monitor = HDMI-0
-; dpi = 96
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3pt
-
-border-size = 4pt
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin = 1
-
-separator = |
-separator-foreground = ${colors.disabled}
-
-font-0 = Consolas;2
-
-modules-left = xworkspaces
-modules-right = filesystem pulseaudio xkeyboard date
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-enable-ipc = true
-tray-position = right
-wm-restack = bspwm
-
-
+; override-redirect = true
 
 
 [module/xworkspaces]
 type = internal/xworkspaces
+
 label-active = %name%
 label-active-background = ${colors.background-alt}
 label-active-underline= ${colors.primary}
 label-active-padding = 1
+
 label-occupied = %name%
 label-occupied-padding = 1
+
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
+
 label-empty = %name%
 label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
+
 format = <label-state>
+
 label-monitor = %name%
 
 [module/xwindow]
