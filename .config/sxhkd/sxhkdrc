@@ -4,16 +4,18 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	kitty
 
 # program launcher
-super + @space
+super + d
 	./rofi/1080p/launchers/colorful/launcher.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + n
+    thunar
 #
 # bspwm hotkeys
 #
