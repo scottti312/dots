@@ -53,9 +53,12 @@ xrandr --output DP-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --r
 picom -f &
 xsetroot -cursor_name left_ptr &
 nitrogen --restore &
-polybar example &
-polybar example1 &
+polybar right &
+sleep 2 && polybar left &
 # sleep 4 && ./.config/polybar/launch_polybar.sh &
-xset r rate 200 25 &
-cadmus &
+modprobe i2c-dev &
+modprobe i2c-i801 &
+openrgb -p off &
+easyeffects &
+sleep 2 && xset r rate 200 25 &
 exec bspwm
