@@ -1,14 +1,6 @@
 # My dots
 Here is my mostly basic configuration. I use kitty as my main terminal and alacritty as backup.
 
-# Screenshot
-## Programs seen in screenshot
- - kitty terminal
- - oh my posh prompt
- - neofetch
- - ranger file explorer
- - astro vim
-
 ![](screenshot.png)
 
 # Programs
