@@ -15,5 +15,3 @@ Here is my mostly basic configuration. I use kitty as my main terminal and alacr
 [picom compositor](https://github.com/yshui/picom)
 
 [polybar status bar](https://github.com/polybar/polybar)
-
-[oh my posh prompt](https://ohmyposh.dev/)
