@@ -5,15 +5,19 @@
 Print
   flameshot gui
 
+XF86AudioLowerVolume
+pactl set-sink-volume @DEFAULT_SINK@ -1000
+
 super + n
-  thunar
+	thunar
+
 # terminal emulator
 super + Return
-	kitty ~
+	kitty
 
 # program launcher
 super + d
-	./.config/rofi/bin/launcher_misc
+	./.config/rofi/bin/launcher_colorful
 
 # make sxhkd reload its configuration files:
 super + Escape
