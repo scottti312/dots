@@ -56,8 +56,8 @@ xset r rate 200 50 &
 openrgb -p off &
 picom -b &
 wired &
-udiskie  &
-sleep 2 && ./.config/polybar/launch_polybar.sh &
+udiskie &
 nitrogen --restore &
+polybar example &
 easyeffects &
 exec bspwm
