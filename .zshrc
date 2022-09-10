@@ -11,7 +11,6 @@ zstyle :compinstall filename '/home/scott/.zshrc'
 autoload -Uz compinit promptinit
 compinit
 promptinit
-prompt walters
 
 # End of lines added by compinstall
 alias ls='ls --color=auto'
@@ -24,3 +23,5 @@ export EDITOR="lvim";
 export VISUAL="lvim";
 export CDPATH=".:/home/scott/Desktop/";
 . "$HOME/.cargo/env"
+
+PROMPT='%n@%m %~ %# '
