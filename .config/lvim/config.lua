@@ -12,6 +12,8 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
+
+vim.opt.relativenumber = true
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -19,6 +21,8 @@ lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["L"] = ":bnext<cr>"
+lvim.keys.normal_mode["H"] = ":bprev<cr>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -58,8 +62,9 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = false
+lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.start_in_insert = true;
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
@@ -84,6 +89,20 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
 
+-- -- make sure server will always be installed even if the server is in skipped_servers list
+-- lvim.lsp.installer.setup.ensure_installed = {
+--     "sumeko_lua",
+--     "jsonls",
+-- }
+-- -- change UI setting of `LspInstallInfo`
+-- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
+-- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
+-- lvim.lsp.installer.setup.ui.border = "rounded"
+-- lvim.lsp.installer.setup.ui.keymaps = {
+--     uninstall_server = "d",
+--     toggle_server_expand = "o",
+-- }
+
 -- ---@usage disable automatic installation of servers
 -- lvim.lsp.automatic_servers_installation = false
 
@@ -94,7 +113,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
--- ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
+-- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
 -- vim.tbl_map(function(server)
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
@@ -148,7 +167,7 @@ lvim.plugins = {
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
-      require("colorizer").setup({ "*" }, {
+      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
         RGB = true, -- #RGB hex codes
         RRGGBB = true, -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
@@ -158,13 +177,60 @@ lvim.plugins = {
         css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
       })
     end,
-  }
-}
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "aca/emmet-ls",
+    config = function()
+      local lspconfig = require("lspconfig")
+      local configs = require("lspconfig/configs")
 
-vim.cmd([[
-    map <F1> <Esc>
-    imap <F1> <Esc>
-]])
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      capabilities.textDocument.completion.completionItem.resolveSupport = {
+        properties = {
+          "documentation",
+          "detail",
+          "additionalTextEdits",
+        },
+      }
+
+      if not lspconfig.emmet_ls then
+        configs.emmet_ls = {
+          default_config = {
+            cmd = { "emmet-ls", "--stdio" },
+            filetypes = {
+              "html",
+              "css",
+              "javascript",
+              "typescript",
+              "eruby",
+              "typescriptreact",
+              "javascriptreact",
+              "svelte",
+              "vue",
+            },
+            root_dir = function(fname)
+              return vim.loop.cwd()
+            end,
+            settings = {},
+          },
+        }
+      end
+      lspconfig.emmet_ls.setup({ capabilities = capabilities })
+    end,
+  },
+  --     {"folke/tokyonight.nvim"},
+  --     {
+  --       "folke/trouble.nvim",
+  --       cmd = "TroubleToggle",
+  --     },
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
