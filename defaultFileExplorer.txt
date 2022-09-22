@@ -1,0 +1,4 @@
+xdg-mime default thunar.desktop inode/directory
+xdg-mime query default inode/directory
+thunar.desktop
+xdg-open ~
