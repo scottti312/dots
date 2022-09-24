@@ -49,6 +49,8 @@ udiskie &
 # multimedia keys. Config at .xbindkeysrc
 xbindkeys &
 # wallpaper
+./.config/polybar/launch_polybar.sh &
+redshift &
 nitrogen --restore &
 polybar example &
 easyeffects &
