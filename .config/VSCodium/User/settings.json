@@ -1,0 +1,33 @@
+{
+    "editor.fontFamily": "'SF Mono'",
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "GitHub Dark Default",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.gpuAcceleration": "on",
+    "editor.wordWrap": "on",
+    "explorer.confirmDelete": false,
+    "editor.tabSize": 2,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "git.confirmSync": false,
+    "colorize.include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "**/*.styl",
+    ],
+    "editor.lineNumbers": "relative",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "colorize.colorized_colors": [
+
+        "BROWSERS_COLORS",
+        "HEXA",
+        "RGB",
+        "HSL"
+    ]
+}
