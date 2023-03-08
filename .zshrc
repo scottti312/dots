@@ -22,6 +22,7 @@ export PATH="$HOME/.cargo/bin/:$PATH";
 export EDITOR="lvim";
 export VISUAL="lvim";
 export CDPATH=".:/home/scott/Desktop/";
+export MOZ_ENABLE_WAYLAND=1;
 . "$HOME/.cargo/env"
 
 PROMPT='%n@%m %~ %# '
