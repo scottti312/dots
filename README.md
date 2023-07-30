@@ -1,17 +1,12 @@
 # My dots
-Here is my mostly basic configuration. I use kitty as my main terminal and alacritty as backup.
-
+My dots. I try to keep everything as simple as possible without sacrificing looks and functionality.
 ![](screenshot.png)
 
 # Programs
-[bspwm window manager](https://github.com/baskerville/bspwm)
+[Hyprland](https://hyprland.org/)
 
-[sxhkd hotkey daemon](https://github.com/baskerville/sxhkd)
+[nitch](https://github.com/ssleert/nitch)
 
 [kitty terminal](https://github.com/kovidgoyal/kitty)
 
-[alacritty terminal](https://github.com/alacritty/alacritty)
-
-[picom compositor](https://github.com/yshui/picom)
-
-[polybar status bar](https://github.com/polybar/polybar)
+[Waybar](https://github.com/Alexays/Waybar)
