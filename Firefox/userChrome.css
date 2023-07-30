@@ -1,0 +1,19 @@
+.titlebar-buttonbox-container {
+  display: none;
+}
+
+#wrapper-alltabs-button {
+  display: none;
+}
+
+#alltabs-button {
+  display: none;
+}
+
+#titlebar {
+  display: none;
+}
+
+.sidebar-placesTreechildren {
+  gap: 50px;
+}
