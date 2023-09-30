@@ -22,12 +22,15 @@ bspc rule -a Todoist desktop='^8'
 bspc rule -a Chromium desktop='^2'
 bspc rule -a easyeffects desktop='^9' follow=off
 bspc rule -a pavucontrol desktop='^9'
-bspc rule -a NoiseTorch desktop='^9'
-bspc rule -a noisetorch desktop='^9'
 bspc rule -a Blueberry.py desktop='^9'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a discord desktop='^4'
+bspc rule -a Steam desktop='^4'
+bspc rule -a cs2 desktop='^3'
+bspc rule -a vibrantLinux state=floating desktop='^8'
+bspc rule -a spotify desktop='^1'
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 

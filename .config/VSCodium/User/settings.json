@@ -21,7 +21,6 @@
         "**/*.less",
         "**/*.styl",
     ],
-    "editor.lineNumbers": "relative",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "colorize.colorized_colors": [
 
@@ -29,5 +28,11 @@
         "HEXA",
         "RGB",
         "HSL"
-    ]
+    ],
+    "debug.javascript.autoAttachFilter": "disabled",
+    "aws.telemetry": false,
+    "window.titleBarStyle": "custom",
+    "editor.indentSize": "tabSize",
+    "redhat.telemetry.enabled": false,
+    "vim.useSystemClipboard": true
 }

@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     "spacing": -4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
     "modules-right": [ "tray", "pulseaudio", "clock"],
     // Modules configuration
@@ -33,12 +33,12 @@
             "unlocked": ""
         }
     },
-    "wlr/workspaces": {
-        "all-outputs": false,
+    "hyprland/workspaces": {
+        "all-outputs": true,
         "active-only": false,
         "on-click": "activate",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
-       "on-scroll-down": "hyprctl dispatch workspace e-1"
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "disk": {
         "format": "/ {percentage_used}%",
