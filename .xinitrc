@@ -36,12 +36,11 @@ export GTK_THEME=Adwaita:dark
 
 # Fix 'X' cursor on desktop
 xsetroot -cursor_name left_ptr &
-xrandr --output DP-2 --primary --mode 1920x1080 --pos 1920x0 --rate 144 --rotate normal --output DP-1 --off --output HDMI-0 --rate 60 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output USB-C-0 --off &
-xset r rate 250 50 &
+xrandr --output DP-2 --primary --mode 1920x1080 --pos 1920x0 --rate 180 --output HDMI-0 --rate 60 --mode 1920x1080 --pos 0x0 &
+xset r rate 200 50 &
+# wireplumber &
 # activate 'off' profile for rgb lights
 openrgb -p off &
-# run compositor in background
-picom -b &
 # notification daemon
 wired &
 # external storage daemon
@@ -52,8 +51,9 @@ xbindkeys &
 ./.config/polybar/launch_polybar.sh &
 .//usr/lib/geoclue-2.0/demos/agent &
 redshift &
+picom -b &
 nitrogen --restore &
-polybar example &
+# polybar example &
 easyeffects &
-blueberry &
+# vibrantLinux &
 exec bspwm
